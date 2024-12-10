@@ -4,7 +4,13 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-func init() {
+func InitTerminal() {
+	_ = lipgloss.HasDarkBackground()
+}
+
+// This function is commented out because its causing garbage to be printed to webterminals
+// when using coder agent-exec. We call it manually for non-agent-exec calls.
+//func init() {
 	// XXX: This is a workaround to make assure that Lip Gloss and Termenv
 	// query the terminal before any Bubble Tea Program runs and acquires the
 	// terminal. Without this, Programs that use Lip Gloss/Termenv might hang
@@ -18,5 +24,6 @@ func init() {
 	// [os.Stdout] and [os.Stdin].
 	//
 	// This workaround will be removed in v2.
-	_ = lipgloss.HasDarkBackground()
-}
+//	_ = lipgloss.HasDarkBackground()
+//}
+//

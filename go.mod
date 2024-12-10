@@ -1,4 +1,4 @@
-module github.com/charmbracelet/bubbletea
+module github.com/coder/bubbletea
 
 go 1.18
 
